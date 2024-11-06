@@ -1,0 +1,91 @@
+{% include 'header.html' %}
+
+<main>
+    <div class="bcg">
+        {% for i in logo_image %}
+        <img class="background_photo" src="{{ i.logo_image }}" alt="">
+        {% endfor %}
+        <div class="bcg_black"></div>
+        <h1 class="title">Learn. Grow. Achieve!</h1>
+    </div>
+</main>
+
+<main class="main_2">
+    <div class="conteiner">
+        <div class="greetings">
+            <h1 class="title_t">Откройте мир знаний вместе с нами!</h1>
+            <div class="line"></div>
+            {% for i in welcome %}
+            <p>{{ i.description }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="advantages">
+            <h1 class="title_t">Почему выбирают нас?</h1>
+
+            {% for i in advanced %}
+            <div class="advan_1">
+                <div class="adv_icon">
+                    <img src="{{ i.image.url }}" alt="">
+                </div>
+                <p class="advan_p">{{ i.text }}</p>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+
+        <div class="greetings">
+            <h1 class="title_t">Наша миссия</h1>
+            <div class="line"></div>
+            <p>Миссия колледжа - подготовка специалистов высокой квалификации, соответствующих современным требованиям
+                рынка труда и развитие сотрудничества в области образования и культуры между Кыргызстаном и Кореей.</p>
+        </div>
+
+        <div class="greetings">
+            <h1 class="title_t">Откройте двери к образованию в Корее!</h1>
+            <div class="line"></div>
+            <p>После окончания нашего колледжа вы сможете продолжить обучение в престижных университетах Кореи,
+                известных своим высоким качеством образования и инновационными программами!</p>
+        </div>
+
+        <div class="faculty_cont">
+            <h1 class="title_t">Специальности</h1>
+            <div class="line_2 line"></div>
+            <div class="faculty">
+
+                {% for i in course_list %}
+                    <div class="item">
+                        <img src="{{ i.image }}" alt="">
+                        <div class="item_fon"></div>
+                        <span class="direct">
+                  <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                </span>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+
+            <h1 class="title_t">IT специальности</h1>
+            <div class="line_2 line"></div>
+            <div class="faculty it_faculty">
+
+                {% for i in course_it %}
+                    <div class="it_item item">
+                        <img src="{{ i.image.url }}" alt="">
+                        <div class="item_fon it_fon"></div>
+                        <span class="direct">
+                        <a class="faculty_href" href="/it_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                    </span>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}

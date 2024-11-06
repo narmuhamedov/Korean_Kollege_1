@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<br><br><br><br><br><br>
+    <div class="container">
+      <div class="image-section">
+        <img src="{{ course_it_id.image.url }}" alt="Переводческое дело" />
+      </div>
+
+      <div class="text-section">
+        <h1 class="header-title">{{ course_it_id.course_name }}</h1>
+        <p class="body-info">
+         {{ course_it_id.description }}
+        </p>
+        <p class="small-text">
+          {{ course_it_id.some_information }}<br />
+        </p>
+        <p class="foot-text">Вступительных экзаменов {{ course_it_id.exam }}</p>
+      </div>
+    </div>
+{% include 'footer.html' %}

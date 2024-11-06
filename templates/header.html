@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КИЦА</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="bcg_head" id="bcg_head">
+
+    </div>
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="{% static 'image_kkc/logo_transparent_blue 1.png' %}" alt=""></a>
+        </div>
+        <div class="href">
+            <a href="#" class="list_href">О колледже</a>
+            <a href="#" class="list_href">Абитуриентам</a>
+            <a href="/news_list/" class="list_href">Новости</a>
+            <a href="#" class="list_href">Студенческая жизнь</a>
+            <a href="#" class="list_href">Документы</a>
+        </div>
+        <div id="menu" class="burger d-none">
+            <div class="nav_footer burger_nav">
+                <h6><a href="#" class="link_nav">О колледже</a></h6>
+                <h6><a href="#" class="link_nav">Абитуриентам</a></h6>
+                <h6><a href="#" class="link_nav">Новости и события</a></h6>
+                <h6><a href="#" class="link_nav">Студенческая жизнь</a></h6>
+                <h6><a href="#" class="link_nav">Документы</a></h6>
+            </div>
+            <div class="stud_tools burger_tools">
+                <div class="tool_1">
+                    <img src="./image/icon/kicalib.png" alt="">
+                    <h6 class="footer_tool"><a class="tool_item" href="#">Kicalib</a></h6>
+                </div>
+                <div class="tool_1">
+                    <img src="./image/icon/avn.png" alt="">
+                    <h6 class="footer_tool"><a class="tool_item" href="#">AVN</a></h6>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button id="burger" class="burger_icon">
+                <img src="./image/icon/hamburger-button.png" alt="">
+            </button>
+            <button id="cross" class="cross">
+                <img src="./image/icon/cross.png" alt="">
+            </button>
+        </div>
+    </nav>
+</header>

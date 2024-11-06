@@ -1,0 +1,74 @@
+{% load static %}
+<footer>
+    <div class="foot_cont">
+        <div class="logo">
+            <div class="log_cont">
+                <img src="{% static 'image_kkc/logo_transparent_blue 2.png' %}" alt="">
+            </div>
+            <div class="soc_net">
+                <a href="#">
+                    <img src="{% static 'image_kkc/soc_net/3337190045231025 1.png' %}" alt="">
+                </a>
+                <a href="#">
+                    <img src="{% static 'image_kkc/soc_net/image 15.png' %}" alt="">
+                </a>
+                <a href="#">
+                    <img src="{% static 'image_kkc/soc_net/image 16.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="contacts">
+            <h3 class="contact_title">Контакты</h3>
+            {% if contact %}
+                {% for item in contact %}
+                    <div class="contact_item">
+                        <span>
+                            <img src="{% static 'image_kkc/icon/Icon_location.png' %}" alt="">
+                        </span>
+                        <a href="#">
+                            <h3>{{ item.street }}</h3> <!-- Отображение улицы -->
+                        </a>
+                    </div>
+                    <div class="contact_item">
+                        <span>
+                            <img src="{% static 'image_kkc/icon/local_phone.png' %}" alt="">
+                        </span>
+                        <a href="#">
+                            <h3>{{ item.number_1 }} | {{ item.number_2 }}<br>
+                                {{ item.number_3 }} | {{ item.number_4 }}</h3> <!-- Отображение телефонов -->
+                        </a>
+                    </div>
+                    <div class="contact_item">
+                        <span>
+                            <img src="{% static 'image_kkc/icon/Icon.png' %}" alt="">
+                        </span>
+                        <a href="#">
+                            <h3>{{ item.email }}</h3> <!-- Отображение email -->
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="nav_footer">
+            <h6><a href="#" class="link_nav">О колледже</a></h6>
+            <h6><a href="#" class="link_nav">Абитуриентам</a></h6>
+            <h6><a href="#" class="link_nav">Новости и события</a></h6>
+            <h6><a href="#" class="link_nav">Студенческая жизнь</a></h6>
+            <h6><a href="#" class="link_nav">Документы</a></h6>
+        </div>
+        <div class="stud_tools">
+            <div class="tool_1">
+                <img src="{% static 'image_kkc/icon/kicalib.png' %}" alt="">
+                <h6 class="footer_tool"><a class="tool_item" href="#">Kicalib</a></h6>
+            </div>
+            <div class="tool_1">
+                <img src="{% static 'image_kkc/icon/avn.png' %}" alt="">
+                <h6 class="footer_tool"><a class="tool_item" href="http://212.112.103.155:85/">AVN</a></h6>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
