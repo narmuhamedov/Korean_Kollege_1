@@ -10,6 +10,7 @@ def main_page(request):
         advanced = models.Advanced.objects.all()
         welcome = models.Welcome.objects.all()
         contact = models.Contact.objects.all()
+        mission = models.Mission.objects.all()
         context = {
             'course_it': course_it,
             'course_list': course_list,
@@ -17,6 +18,7 @@ def main_page(request):
             'advanced': advanced,
             'welcome': welcome,
             'contact': contact,
+            'mission': mission
         }
         return render(request, template_name='index.html', context=context)
 

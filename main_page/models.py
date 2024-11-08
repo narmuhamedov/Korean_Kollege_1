@@ -74,6 +74,16 @@ class Courses(models.Model):
         verbose_name = 'направление'
         verbose_name_plural = 'направления'
 
+class Mission(models.Model):
+    mission = models.TextField(verbose_name='Напишите миссию института', default='')
+
+    def __str__(self):
+        return self.mission
+
+    class Meta:
+        verbose_name = 'миссия'
+        verbose_name_plural = 'миссии'
+
 
 # Таблица для IT направлений
 class ITCourses(models.Model):

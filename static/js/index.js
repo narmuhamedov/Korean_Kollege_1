@@ -46,3 +46,5 @@ function closeMenuIfClickedOutside(event) {
 document.addEventListener("click", closeMenuIfClickedOutside);
 document.addEventListener("scroll", closeMenuIfClickedOutside);
 })
+
+

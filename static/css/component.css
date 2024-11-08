@@ -72,14 +72,14 @@ body{
   margin: auto;
   width: 70%;
   height: 2px;
-  background-color: black;
+  background-color: #275aa7;
   position: relative;
 }
 .line::before, .line::after{
   content: '';
   width: 8px;
   height: 8px;
-  background-color: black;
+  background-color: #275aa7;
   border-radius: 50%;
   position: absolute;
   top: -2.5px;

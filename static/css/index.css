@@ -151,7 +151,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     width: 90%;
-    background-color: #E5E5E5;
+    background-image: url("https://bigfoto.name/uploads/posts/2021-11/1636390079_1-bigfoto-name-p-neitralnii-sinii-fon-1.jpg");
     color: #222222;
     position: relative;
     top: -90px;
@@ -159,7 +159,7 @@ nav {
 }
 
 .greetings, .advantages {
-    max-width: 600px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -412,6 +412,7 @@ a {
     .title_t {
         font-size: 25px;
     }
+
 
     .advan_1 {
         align-items: center;
