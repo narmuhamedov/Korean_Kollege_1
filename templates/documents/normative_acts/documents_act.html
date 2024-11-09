@@ -1,0 +1,27 @@
+{% load static %}
+{% include '../../header.html' %}
+<link rel="stylesheet" href="{% static 'css/component_doc.css' %}">
+<link rel="stylesheet" href="{% static 'css/documents.css' %}">
+<main>
+    <h1>Нормативно правовые акты</h1>
+    <img class="bcg_docs" src="{% static 'image_kkc/img/bcg.png' %}" alt="">
+</main>
+
+
+<div class="cont_docs">
+    {% for i in act_list %}
+    <a href="/documents_normative_acts_list/{{ i.id }}/">
+        <div class="doc_item">
+            <div class="img_item">
+                <img src="{% static 'image_kkc/img/doc.png' %}" alt="">
+            </div>
+            <p>{{ i.name_doc }}</p>
+            <button class="rec_arrow">
+                <p>➝</p>
+            </button>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% include '../../footer.html' %}

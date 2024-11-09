@@ -1,0 +1,4 @@
+.filter-horizontal .selector-available,
+.filter-horizontal .selector-chosen {
+    width: 1300px; /* Задайте нужную ширину */
+}

@@ -17,7 +17,7 @@
     <div class="conteiner">
 
         <div class="greetings">
-            <h1 class="title_t title_color">Наша миссия</h1>
+            <h1 id="knowledge-title" class="title_t" >Наша миссия</h1>
             <div class="line"></div>
             {% for i in mission %}
                 <p>{{ i.mission }}</p>
@@ -26,7 +26,7 @@
 
 
         <div class="greetings">
-            <h1 class="title_t">Откройте мир знаний вместе с нами!</h1>
+            <h1 id="knowledge-title" class="title_t" >Откройте мир знаний вместе с нами!</h1>
             <div class="line"></div>
             {% for i in welcome %}
                 <p>{{ i.description }}</p>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="advantages">
-            <h1 class="title_t">Почему выбирают нас?</h1>
+            <h1 id="knowledge-title" class="title_t" >Почему выбирают нас?</h1>
 
             {% for i in advanced %}
                 <div class="advan_1">
@@ -50,14 +50,15 @@
 
 
         <div class="greetings">
-            <h1 class="title_t">Откройте двери к образованию в Корее!</h1>
+            <h1 id="knowledge-title" class="title_t" >Откройте двери к образованию в Корее!</h1>
             <div class="line"></div>
-            <p>После окончания нашего колледжа вы сможете продолжить обучение в престижных университетах Кореи,
-                известных своим высоким качеством образования и инновационными программами!</p>
+            {% for i in open_door %}    
+            <p>{{ i.open_door }}</p>
+        {% endfor %}
         </div>
 
         <div class="faculty_cont">
-            <h1 class="title_t">Специальности</h1>
+            <h1 id="knowledge-title" class="title_t" >Специальности</h1>
             <div class="line_2 line"></div>
             <div class="faculty">
 
@@ -74,8 +75,8 @@
 
             </div>
 
-
-            <h1 class="title_t">IT специальности</h1>
+            
+            <h1 id="knowledge-title" class="title_t" >IT специальности</h1>
             <div class="line_2 line"></div>
             <div class="faculty it_faculty">
 

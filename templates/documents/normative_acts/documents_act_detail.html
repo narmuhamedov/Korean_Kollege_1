@@ -1,0 +1,18 @@
+{% load static %}
+{% include '../../header.html' %}
+<link rel="stylesheet" href="{% static 'css/documents/component.css' %}">
+<link rel="stylesheet" href="{% static 'css/documents/detailDoc.css' %}">
+<br><br><br>
+<h1 style="color: #01609A; text-align: center; font-family: Arial">{{ act_detail.name_doc }}</h1>
+{% for i in act_detail.category_acts.all %}
+<div class="conteiner_doc_item">
+    <div class="item">
+        <h1 class="title_doc_item">{{ i.name_doc_act }}</h1>
+        <div class="btns">
+            <button class="view"><a href="{{ i.file_doc.url }}" download style="color: white">Скачать документ</a></button>
+            <button class="view"><a href="{% url 'documents_act_list' %}" style="color: white">Назад</a></button>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% include '../../footer.html' %}

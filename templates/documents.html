@@ -1,0 +1,49 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/component_doc.css' %}">
+<link rel="stylesheet" href="{% static 'css/documents.css' %}">
+<main>
+    <h1>Документы</h1>
+    <img class="bcg_docs" src="{% static 'image_kkc/img/bcg.png' %}" alt="">
+</main>
+
+
+<div class="cont_docs">
+    <a href="{% url 'documents_license' %}">
+        <div class="doc_item">
+            <div class="img_item">
+                <img src="{% static 'image_kkc/img/doc.png' %}" alt="">
+            </div>
+            <p>Лицензии</p>
+            <button class="rec_arrow">
+                <p>➝</p>
+            </button>
+        </div>
+    </a>
+
+    <a href="{% url 'documents_act_list' %}">
+        <div class="doc_item">
+            <div class="img_item">
+                <img src="{% static 'image_kkc/img/doc.png' %}" alt="">
+            </div>
+            <p>Нормативно-правовые акты</p>
+            <button class="rec_arrow">
+                <p>➝</p>
+            </button>
+        </div>
+    </a>
+
+    <a href="{% url 'documents_structure' %}">
+        <div class="doc_item">
+            <div class="img_item">
+                <img src="{% static 'image_kkc/img/doc.png' %}" alt="">
+            </div>
+            <p>Организационная структура</p>
+            <button class="rec_arrow">
+                <p>➝</p>
+            </button>
+        </div>
+    </a>
+
+</div>
+{% include 'footer.html' %}

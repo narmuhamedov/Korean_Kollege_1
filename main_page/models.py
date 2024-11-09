@@ -16,6 +16,7 @@ class News(models.Model):
         verbose_name_plural = 'новости'
 
 
+
 # Возможность менять лого фото
 class LogoImage(models.Model):
     logo_image = models.ImageField(upload_to="logo_images", null=True, verbose_name='Загрузите фото лого')
@@ -23,6 +24,7 @@ class LogoImage(models.Model):
     class Meta:
         verbose_name = 'фото лого'
         verbose_name_plural = 'фото логотипа'
+
 
 
 # Таблица Почему выбирают нас
@@ -39,6 +41,7 @@ class Advanced(models.Model):
         verbose_name_plural = 'продвижения'
 
 
+
 # WELCOME таблица
 
 class Welcome(models.Model):
@@ -50,6 +53,7 @@ class Welcome(models.Model):
     class Meta:
         verbose_name = 'добро пожаловать'
         verbose_name_plural = 'добро пожаловать'
+
 
 
 # Таблица для обычных направлений
@@ -74,6 +78,7 @@ class Courses(models.Model):
         verbose_name = 'направление'
         verbose_name_plural = 'направления'
 
+
 class Mission(models.Model):
     mission = models.TextField(verbose_name='Напишите миссию института', default='')
 
@@ -83,6 +88,17 @@ class Mission(models.Model):
     class Meta:
         verbose_name = 'миссия'
         verbose_name_plural = 'миссии'
+
+
+class OpenDoor(models.Model):
+    open_door = models.TextField(verbose_name='укажите почему выбирают нас')
+    def __str__(self):
+        return self.open_door
+
+    class Meta:
+        verbose_name = 'выбирают нас'
+        verbose_name_plural = 'выбрали нас'
+
 
 
 # Таблица для IT направлений
@@ -105,6 +121,8 @@ class ITCourses(models.Model):
         verbose_name_plural = 'IT направления'
 
 
+
+
 # Таблица о нас контакты
 
 class Contact(models.Model):
@@ -121,3 +139,4 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'контакт'
         verbose_name_plural = 'контакты'
+
