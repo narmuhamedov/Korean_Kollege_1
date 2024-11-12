@@ -9,7 +9,7 @@
     <div class="item">
         <h1 class="title_doc_item">{{ i.name_doc }}</h1>
         <div class="btns">
-            <button class="view"><a href="{{ i.file_doc.url }}" download style="color: white">Скачать документ</a></button>
+            <button class="view"><a href="{{ i.url_doc }}" style="color: white">Посмотреть документ</a></button>
             <button class="view"><a href="{% url 'documents' %}" style="color: white">На документы</a></button>
         </div>
     </div>

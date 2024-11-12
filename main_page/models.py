@@ -67,8 +67,9 @@ class Courses(models.Model):
     description = models.TextField(verbose_name='укажите описания к курсу', null=True)
     some_information = models.TextField(verbose_name='укажите информацию о скидках', null=True)
     exam = models.CharField(max_length=100, verbose_name='есть ли вступительные экзамены', choices=EXAM, null=True)
-    #lupic_ic = TextField
-    #community = TextField
+
+    #Програма текста об
+
 
 
     def __str__(self):
@@ -112,6 +113,7 @@ class ITCourses(models.Model):
     description = models.TextField(verbose_name='укажите описания к курсу', null=True)
     some_information = models.TextField(verbose_name='укажите информацию о скидках', null=True)
     exam = models.CharField(max_length=100, verbose_name='есть ли вступительные экзамены', choices=EXAM, null=True)
+    # lupic_ic = TextField
 
     def __str__(self):
         return self.course_name
