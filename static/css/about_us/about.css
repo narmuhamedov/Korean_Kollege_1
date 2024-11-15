@@ -1,0 +1,161 @@
+.about_bcg{
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  /* display: flex; */
+  background-image: url("./snapedit_1731654962571.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.about_bcg .fon{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgb(1, 96, 154, 0.2);
+  z-index: 3;
+}
+.about_collage{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    line-height: 40px;
+    padding: 40px;
+    font-size: 18px;
+}
+.about_collage h1{
+    margin-bottom: 30px;
+}
+ /* скрываем все input[type="radio"], расположенные в .tab
+        .tab > input[type="radio"] {
+          display: none;
+        }
+      
+        /* скрываем все .tab-content */
+        .tab-content {
+          display: none;
+        }
+      
+        /* отображаем только тот контент, который соответствует отмеченной радоикнопки */
+        #tab-btn-1:checked~#content-1,
+        #tab-btn-2:checked~#content-2,
+        #tab-btn-3:checked~#content-3 {
+          display: block;
+        }
+.tab {
+    display: flex;justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    text-align: center ;
+    margin-top: 30px;
+  }
+.button_cont{
+  margin: auto;
+}
+  .tab > input[type="radio"] {
+    display: none;
+  }
+  
+  .tab-content {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+
+  }
+  
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3 {
+    display: block;
+  }
+  
+  .tab > label {
+    display: block;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    text-decoration: none;
+    color: #0d6efd;
+    border: 0;
+    border-radius: 0.375rem;
+    background: 0 0;
+  }
+  
+  .tab > input[type="radio"]:checked + label {
+    cursor: default;
+    color: #fff;
+    background-color: #007bff;
+  }
+
+
+
+
+.tab-content{
+  text-align: center;
+
+}
+
+  
+.card {
+  width: 48rem;
+  max-width: 100%;
+  min-width: 30px;
+  min-height: 240px;
+  border: 1px solid #ddd;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.card-image {
+  border-radius: 0.7rem;
+  background-color: #6c757d;
+  color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* min-width: 280px; */
+  max-height: 280px;
+  overflow: hidden;
+}
+.card-image img{
+  max-height: 100%;
+}
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  line-height: 30px;
+}
+.color{
+  color: #007bff;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .about_collage {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about_collage {
+    padding: 20px;
+  }
+  .tab{
+    width: 80%;
+  }
+}

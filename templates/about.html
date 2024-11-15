@@ -1,0 +1,57 @@
+{% load static %}
+{% include 'header.html' %}
+
+ <link rel="stylesheet" href="{% static 'css/about_us/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about_us/component.css' %}">
+
+    <div class="about_bcg">
+        <div class="fon"></div>
+    </div>
+
+
+
+    <div class="about_collage">
+        <h1>О нас</h1>
+        {% for i in about_t %}
+        <p>{{ i.text }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="tab">
+        <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+        <label for="tab-btn-1">АУП</label>
+        <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+        <label for="tab-btn-2">ППС</label>
+      <div class="tab-content" id="content-1">
+        <h1>АУП</h1>
+        <!-- цикл сюда -->
+        <div class="card">
+            <div class="card-image">
+                <img src="./Снимок экрана 2024-11-14 144112.png" alt="">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title color">Куратор</h5>
+                <h6 class="card-title">Каныкей Суранова</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At vitae, aut ad reiciendis illum voluptate quasi perspiciatis tempore, nihil omnis laudantium recusandae dolorem quaerat impedit unde id laboriosam. Nemo alias, maiores, officiis quo temporibus quam cupiditate culpa non dolores ducimus eius possimus exercitationem omnis amet eos delectus accusamu</p>
+            </div>
+        </div>
+
+      </div>
+      <div class="tab-content" id="content-2">
+        <h1>ППС</h1>
+        <!-- цикл сюда -->
+        <div class="card">
+          <div class="card-image">
+              <img src="./news.png" alt="">
+          </div>
+          <div class="card-body">
+              <h5 class="card-title">Состоялась спортакиада  между </h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+{% include 'footer.html' %}

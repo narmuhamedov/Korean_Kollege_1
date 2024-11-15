@@ -46,3 +46,6 @@ class Organizational_structure(models.Model):
     class Meta:
         verbose_name = 'организационная структура'
         verbose_name_plural = 'организационные структуры'
+
+
+
