@@ -1,19 +1,29 @@
 .about_bcg{
   width: 100%;
-  height: 500px;
+  max-height: 500px;
   overflow: hidden;
-  /* display: flex; */
-  background-image: url("./snapedit_1731654962571.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+}
+.about_bcg img{
+  width: 100%;
 }
 .about_bcg .fon{
   content: '';
   width: 100%;
   height: 100%;
   background-color: rgb(1, 96, 154, 0.2);
-  z-index: 3;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.title{
+  position: absolute;
+  font-weight: 700;
+  bottom: clamp(40px, 50px, 300px);
+  left: clamp(40px, 100px, 300px);
+  font-size: clamp(1.5rem, 4vw, 6rem);
+  color: #fff;
 }
 .about_collage{
     width: 50%;
@@ -89,60 +99,22 @@
   }
 
 
-
+.card{
+  max-width: 700px !important;
+  margin: auto;
+}
 
 .tab-content{
   text-align: center;
 
 }
 
-  
-.card {
-  width: 48rem;
-  max-width: 100%;
-  min-width: 30px;
-  min-height: 240px;
-  border: 1px solid #ddd;
-  border-radius: 0.7rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.card-image {
-  border-radius: 0.7rem;
-  background-color: #6c757d;
-  color: #e9ecef;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* min-width: 280px; */
-  max-height: 280px;
-  overflow: hidden;
-}
-.card-image img{
-  max-height: 100%;
-}
-.card-body {
-  padding: 1rem;
-}
-
-.card-title {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.card-text {
-  font-size: 1rem;
-  color: #6c757d;
-  margin-bottom: 1rem;
-  line-height: 30px;
-}
 .color{
-  color: #007bff;
+  color: #007bff !important;
+  font-size: 24px;
+}
+.btn{
+  border: 1px solid black !important;
 }
 
 
@@ -155,7 +127,12 @@
   .about_collage {
     padding: 20px;
   }
+  .about_collage p{
+    font-size: 1rem;
+    line-height: normal;
+  }
   .tab{
     width: 80%;
   }
+
 }

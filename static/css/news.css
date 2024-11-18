@@ -36,10 +36,10 @@
     border-top-right-radius: 0.7rem;
     background-color: #6c757d;
     color: #e9ecef;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     justify-content: center;
-    
+
     height: 180px;
     overflow: hidden;
 }

@@ -1,57 +1,80 @@
 {% load static %}
 {% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/about_us/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/about_us/component.css' %}./component.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
- <link rel="stylesheet" href="{% static 'css/about_us/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/about_us/component.css' %}">
-
-    <div class="about_bcg">
-        <div class="fon"></div>
-    </div>
-
+<div class="about_bcg">
+    <img src="{% static 'image_kkc/snapedit_1731654962571.jpeg' %}" alt="">
+    <div class="fon"></div>
+    <h1 class="title">О нас</h1>
+</div>
 
 
-    <div class="about_collage">
-        <h1>О нас</h1>
-        {% for i in about_t %}
+<div class="about_collage">
+    <h1>О нас</h1>
+    {% for i in about_t %}
         <p>{{ i.text }}</p>
-        {% endfor %}
-    </div>
+    {% endfor %}
+</div>
 
-    <div class="tab">
-        <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
-        <label for="tab-btn-1">АУП</label>
-        <input id="tab-btn-2" name="tab-btn" type="radio" value="">
-        <label for="tab-btn-2">ППС</label>
-      <div class="tab-content" id="content-1">
+<div class="tab">
+    <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+    <label for="tab-btn-1">АУП</label>
+    <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+    <label for="tab-btn-2">ППС</label>
+    <div class="tab-content" id="content-1">
         <h1>АУП</h1>
         <!-- цикл сюда -->
-        <div class="card">
-            <div class="card-image">
-                <img src="./Снимок экрана 2024-11-14 144112.png" alt="">
+        {% for i in about_aup %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ i.image.url }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title color">{{ i.position }}</h5>
+                            <h5 class="card-title">{{ i.name }}</h5>
+                            <p class="card-text">
+                                {{ i.description }}
+                            </p>
+                            <a href="/about_us_detail_aup/{{ i.id }}/" class="card-text">
+                                <small class="btn text-body-secondary">Подробнее</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title color">Куратор</h5>
-                <h6 class="card-title">Каныкей Суранова</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At vitae, aut ad reiciendis illum voluptate quasi perspiciatis tempore, nihil omnis laudantium recusandae dolorem quaerat impedit unde id laboriosam. Nemo alias, maiores, officiis quo temporibus quam cupiditate culpa non dolores ducimus eius possimus exercitationem omnis amet eos delectus accusamu</p>
-            </div>
-        </div>
-
-      </div>
-      <div class="tab-content" id="content-2">
+        {% endfor %}
+    </div>
+    <div class="tab-content" id="content-2">
         <h1>ППС</h1>
         <!-- цикл сюда -->
-        <div class="card">
-          <div class="card-image">
-              <img src="./news.png" alt="">
-          </div>
-          <div class="card-body">
-              <h5 class="card-title">Состоялась спортакиада  между </h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-
-      </div>
+        {% for i in about_ppc %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ i.image.url }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title color">{{ i.name }}</h5>
+                            <h5 class="card-title">{{ i.course }}</h5>
+                            <p class="card-text">{{ i.description }}</p>
+                            <a href="/about_us_detail_ppc/{{ i.id }}/" class="card-text">
+                                <small class="btn text-body-secondary">Подробнее</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
+</div>
 
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 {% include 'footer.html' %}
