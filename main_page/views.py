@@ -12,6 +12,7 @@ def main_page(request):
         contact = models.Contact.objects.all()
         mission = models.Mission.objects.all()
         open_door = models.OpenDoor.objects.all()
+        news_list = models.News.objects.all()
         context = {
             'course_it': course_it,
             'course_list': course_list,
@@ -20,7 +21,8 @@ def main_page(request):
             'welcome': welcome,
             'contact': contact,
             'mission': mission,
-            'open_door': open_door
+            'open_door': open_door,
+            'news_list': news_list,
         }
         return render(request, template_name='index.html', context=context)
 
