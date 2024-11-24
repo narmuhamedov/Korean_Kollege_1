@@ -1,0 +1,64 @@
+h1{
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  color: #01609A;
+}
+.cont_news {
+  width: 80%;
+  margin: auto;
+  display: flex; /* Включаем Flexbox */
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+  gap: 20px; /* Расстояние между элементами */
+  flex-wrap: wrap; /* Перенос строк для маленьких экранов */
+}
+.image_news {
+  flex: 1 1 calc(50% - 20px); /* Устанавливаем ширину каждого изображения в 50% */
+  max-width: 50%; /* Максимальная ширина 50% контейнера */
+  display: flex;
+  justify-content: center;
+}
+.image_news img {
+  width: 100%; /* Изображение растягивается на всю ширину контейнера */
+  height: auto; /* Сохраняется пропорция изображения */
+  object-fit: cover; /* Центрирует изображение и обрезает лишнее */
+  max-height: 300px; /* Устанавливаем одинаковую высоту для всех изображений */
+  border-radius: 10px; /* Для округленных углов, если нужно */
+}
+h2{
+  color: #01609A;
+  margin-top: 20px ;
+  margin-bottom: 20px ;
+}
+p{
+  font-size: 20px;
+}
+.news-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Выравнивание по левому краю */
+  gap: 20px; /* Расстояние между блоками */
+  margin-left: 20px; /* Сдвиг всей группы глазика и даты правее */
+  margin-bottom: 20px;
+}
+
+.views-counter {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Размер текста для просмотров */
+  color: #6c757d;
+  margin-left: 10px; /* Сдвиг глазика и количества просмотров правее */
+}
+
+.eye-icon {
+  width: 24px; /* Размер глазика */
+  height: 24px;
+  margin-right: 8px; /* Отступ справа от глазика */
+}
+
+.news-date {
+  font-size: 16px; /* Размер шрифта для даты */
+  color: #01609A; /* Цвет даты */
+  margin-left: 10px; /* Сдвиг даты правее */
+}

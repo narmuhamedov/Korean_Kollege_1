@@ -115,7 +115,7 @@
             <h5 class="card-title">{{ i.title }}</h5>
             <p class="card-text">{{ i.description }}</p>
             <p class="date-news">{{ i.created_at }}</p>
-            <a href="#" class="card-button">Подробнее</a>
+           <a href="/news_list/{{ i.id }}/" class="card-button">Подробнее</a>
         </div>
     </div>
     {% endfor %}

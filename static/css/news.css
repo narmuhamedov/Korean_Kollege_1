@@ -60,7 +60,17 @@
     font-size: 0.7rem;
     color: #6c757d;
     margin-bottom: 1rem;
+
+    /* Новые стили для обрезки текста */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Количество строк, которые будут отображаться */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляет многоточие */
+    height: calc(3 * 1.2rem); /* Задайте высоту для 3 строк текста */
+    line-height: 1.2rem; /* Высота строки */
 }
+
 .date-news{
     font-size: 0.6rem;
 }

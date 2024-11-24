@@ -1,0 +1,44 @@
+{% load static %}
+{% include 'header.html' %}
+  <link rel="stylesheet" href="{% static 'css/news_detail/newDetail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news_detail/component.css' %}">
+<body>
+<main class="bcg_main">
+    <img class="img_bcg" src="{{ news_id.image.url }}" alt="Новостное изображение">
+    <div class="text-content text-content2">
+        <h1>{{ news_id.title }}</h1>
+    </div>
+</main>
+
+<div class="news-meta">
+  <div class="views-counter">
+    <img src="{% static 'image_kkc/5219439.png' %}" alt="Просмотры" class="eye-icon">
+    <span>{{ news_id.views }}</span> &nbsp;просмотров
+  </div>
+  <div class="news-date">
+    {{ news_id.created_at }}
+  </div>
+</div>
+
+
+<div class="cont_news">
+    <!-- Проверяем, есть ли image2 -->
+    {% if news_id.image2 %}
+    <div class="image_news">
+        <img src="{{ news_id.image2.url }}" alt="Дополнительное изображение 1">
+    </div>
+    {% endif %}
+    
+    <!-- Проверяем, есть ли image3 -->
+    {% if news_id.image3 %}
+    <div class="image_news">
+        <img src="{{ news_id.image3.url }}" alt="Дополнительное изображение 2">
+    </div>
+    {% endif %}
+    
+    <div class="text_news">
+        <p>{{ news_id.description }}</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}

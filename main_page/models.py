@@ -3,10 +3,13 @@ from django.db import models
 
 # новости и события
 class News(models.Model):
-    image = models.ImageField(upload_to='news/', verbose_name='загрузите фото')
-    title = models.CharField(max_length=100, verbose_name='укажите название новости')
+    image = models.ImageField(upload_to='news/', verbose_name='загрузите основное фото', null=True)
+    image2 = models.ImageField(upload_to='news/', verbose_name='загрузите доп фото', null=True)
+    image3 = models.ImageField(upload_to='news/', verbose_name='загрузите доп фото', null=True, blank=True)
+    title = models.CharField(max_length=100, verbose_name='укажите название новости', null=True)
     description = models.TextField(verbose_name='Укажите написание новости')
     created_at = models.DateTimeField(auto_now_add=True)
+    views = models.PositiveIntegerField(default=0, verbose_name='Количество просмотров', null=True)  # Поле просмотров
 
     def __str__(self):
         return self.title
