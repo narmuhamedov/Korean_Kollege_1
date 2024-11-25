@@ -67,8 +67,9 @@ class Courses(models.Model):
     )
     image = models.ImageField(upload_to='images/', null=True, verbose_name="Загрузите фото направления")
     course_name = models.CharField(max_length=100, null=True, verbose_name='Укажите название курса')
+    #квалификация-
     description = models.TextField(verbose_name='укажите описания к курсу', null=True)
-    some_information = models.TextField(verbose_name='укажите информацию о скидках', null=True)
+    #year_study =  срок обучения#
     exam = models.CharField(max_length=100, verbose_name='есть ли вступительные экзамены', choices=EXAM, null=True)
 
     #Програма текста об
