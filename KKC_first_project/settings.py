@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'main_page',
     'documents',
     'about_us',
+    'international_department',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,82 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/component_doc.css' %}">
+<link rel="stylesheet" href="{% static 'css/documents.css' %}">
+<link rel="stylesheet" href="{% static 'css/inter_department/department.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+<main>
+    <h1>Международный отдел</h1>
+    <img class="bcg_docs" src="{% static 'image_kkc/img/bcg.png' %}" alt="">
+</main>
+
+<div class="accordion">
+    <div class="accordion-item">
+        <button class="accordion-header">Сотрудники отдела</button>
+        <div class="accordion-content">
+            {% for i in employee %}
+            <div class="staff-card">
+                <img src="{{ i.image.url }}"
+                     alt="Дюшеева Нурзада Шабдановна">
+                <div class="staff-details">
+                    <h3>{{ i.name }}</h3>
+                    <p><strong>Должность:</strong>{{ i.position }}</p>
+                    <p>📧 <a href="mailto:international@kgma.kg">{{ i.email_employe }}</a></p>
+                    <p>📞 {{ i.number }}</p>
+                    <p>📍 {{ i.address }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Повторите блок для других сотрудников -->
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Краткая история отдела</button>
+        <div class="accordion-content">
+            {% for i in short_information %}
+            <p>{{ i.text }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Общая информация</button>
+        <div class="accordion-content">
+            {% for i in general_information %}
+            <p>{{ i.text }}</p>
+            {% endfor %}
+        </div>
+    </div>
+ <div class="accordion-item">
+        <button class="accordion-header">Деятельность</button>
+        <div class="accordion-content">
+            {% for i in deparment_activity %}
+            <p>{{ i.text }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="accordion-item">
+    <button class="accordion-header">Фотогалерея</button>
+    <div class="accordion-content">
+        <div class="photo-gallery">
+            {% for i in gallery %}
+            <a href="{{ i.image.url }}" data-lightbox="gallery">
+                <img src="{{ i.image.url }}" alt="{{ i.image.url }}">
+            </a>
+            {% endfor %}
+            <!-- Добавьте больше изображений -->
+        </div>
+    </div>
+</div>
+    <div class="accordion-item">
+        <button class="accordion-header">Нормативно-правовые документы</button>
+        <div class="accordion-content">
+            <p><a target="_blank" href="">Положение ОМС</a></p>
+            <p><a target="_blank" href="">План работы отдела на 2022-2023 академический год</a></p>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<script src="{% static 'css/inter_department/department.js' %}"></script>
+{% include 'footer.html' %}

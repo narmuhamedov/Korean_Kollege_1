@@ -67,12 +67,10 @@ class Courses(models.Model):
     )
     image = models.ImageField(upload_to='images/', null=True, verbose_name="Загрузите фото направления")
     course_name = models.CharField(max_length=100, null=True, verbose_name='Укажите название курса')
-    #квалификация-
+    qualification = models.CharField(max_length=100, verbose_name='укажите квалификацию', null=True)
     description = models.TextField(verbose_name='укажите описания к курсу', null=True)
-    #year_study =  срок обучения#
+    year_study =  models.CharField(max_length=100, verbose_name='укажите срок обучения', null=True)
     exam = models.CharField(max_length=100, verbose_name='есть ли вступительные экзамены', choices=EXAM, null=True)
-
-    #Програма текста об
 
 
 
@@ -115,7 +113,8 @@ class ITCourses(models.Model):
     image = models.ImageField(upload_to='images/', null=True, verbose_name='Загрузите фото IT специальности')
     course_name = models.CharField(max_length=100, null=True, verbose_name='Укажите название курса')
     description = models.TextField(verbose_name='укажите описания к курсу', null=True)
-    some_information = models.TextField(verbose_name='укажите информацию о скидках', null=True)
+    qualification = models.CharField(max_length=100, verbose_name='укажите квалификацию', null=True)
+    year_study =  models.CharField(max_length=100, verbose_name='укажите срок обучения', null=True)
     exam = models.CharField(max_length=100, verbose_name='есть ли вступительные экзамены', choices=EXAM, null=True)
     # lupic_ic = TextField
 
