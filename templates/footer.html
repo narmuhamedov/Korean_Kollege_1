@@ -9,10 +9,10 @@
                 <a href="#">
                     <img src="{% static 'image_kkc/soc_net/3337190045231025 1.png' %}" alt="">
                 </a>
-                <a href="#">
+                <a target="_blank" href="https://www.instagram.com/kkc_kica?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                     <img src="{% static 'image_kkc/soc_net/image 15.png' %}" alt="">
                 </a>
-                <a href="#">
+                <a target="_blank" href="https://wa.me/996771912109">
                     <img src="{% static 'image_kkc/soc_net/image 16.png' %}" alt="">
                 </a>
             </div>
@@ -50,11 +50,11 @@
             {% endif %}
         </div>
         <div class="nav_footer">
-            <h6><a href="#" class="link_nav">О колледже</a></h6>
+            <h6><a href="{% url 'about_us' %}" class="link_nav">О колледже</a></h6>
             <h6><a href="#" class="link_nav">Абитуриентам</a></h6>
-            <h6><a href="#" class="link_nav">Новости и события</a></h6>
+            <h6><a href="{% url 'news_list' %}" class="link_nav">Новости и события</a></h6>
             <h6><a href="#" class="link_nav">Студенческая жизнь</a></h6>
-            <h6><a href="#" class="link_nav">Документы</a></h6>
+            <h6><a href="{% url 'documents' %}" class="link_nav">Документы</a></h6>
         </div>
         <div class="stud_tools">
             <div class="tool_1">

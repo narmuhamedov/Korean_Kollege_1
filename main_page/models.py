@@ -8,6 +8,7 @@ class News(models.Model):
     image3 = models.ImageField(upload_to='news/', verbose_name='загрузите доп фото', null=True, blank=True)
     title = models.CharField(max_length=100, verbose_name='укажите название новости', null=True)
     description = models.TextField(verbose_name='Укажите написание новости')
+    video_url = models.URLField(verbose_name='укажите ссылку с youtube', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     views = models.PositiveIntegerField(default=0, verbose_name='Количество просмотров', null=True)  # Поле просмотров
 

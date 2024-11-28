@@ -17,7 +17,7 @@
             {% for i in employee %}
             <div class="staff-card">
                 <img src="{{ i.image.url }}"
-                     alt="Дюшеева Нурзада Шабдановна">
+                     alt="{{ i.name }}">
                 <div class="staff-details">
                     <h3>{{ i.name }}</h3>
                     <p><strong>Должность:</strong>{{ i.position }}</p>
@@ -47,8 +47,8 @@
         </div>
     </div>
  <div class="accordion-item">
-        <button class="accordion-header">Деятельность</button>
-        <div class="accordion-content">
+       <button class="accordion-header">Деятельность</button>
+       <div class="accordion-content">
             {% for i in deparment_activity %}
             <p>{{ i.text }}</p>
             {% endfor %}
@@ -71,8 +71,9 @@
     <div class="accordion-item">
         <button class="accordion-header">Нормативно-правовые документы</button>
         <div class="accordion-content">
-            <p><a target="_blank" href="">Положение ОМС</a></p>
-            <p><a target="_blank" href="">План работы отдела на 2022-2023 академический год</a></p>
+            {% for i in regulary_document %}
+            <p><a target="_blank" href="{{ i.url_document }}">{{ i.name_document }}</a></p>
+            {% endfor %}
         </div>
     </div>
 </div>

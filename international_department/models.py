@@ -61,6 +61,7 @@ class Gallery(models.Model):
 
 
 class RegulatoryDocuments(models.Model):
+    name_document = models.CharField(max_length=150, verbose_name='укажите имя документа', null=True)
     url_document = models.URLField(verbose_name='вставьте ссылку на документ')
 
     def __str__(self):
