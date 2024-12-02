@@ -11,9 +11,8 @@
     </div>
 </main>
 
-
 <div class="news">
-    {% for i in news_list %}
+    {% for i in page_obj %}
     <div class="card">
         <div class="card-image">
             <img src="{{ i.image.url }}" alt="">
@@ -27,6 +26,23 @@
     </div>
     {% endfor %}
 </div>
-    <br>
+
+<!-- Блок пагинации -->
+<div class="pagination">
+    <div class="pagination-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="pagination-btn first-page">Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-btn prev-page">Назад</a>
+        {% endif %}
+
+        <span class="current-page">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="pagination-btn next-page">Вперед</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-btn last-page">Последняя</a>
+        {% endif %}
+    </div>
+</div>
+
 
 {% include 'footer.html' %}

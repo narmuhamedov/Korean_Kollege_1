@@ -1,4 +1,5 @@
 from django.db.models import F
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from . import models
 
@@ -14,6 +15,9 @@ def main_page(request):
         mission = models.Mission.objects.all()
         open_door = models.OpenDoor.objects.all()
         news_list = models.News.objects.all().order_by('-id')
+        paginator = Paginator(news_list, 2)
+        page = request.GET.get('page')
+        page_obj = paginator.get_page(page)
         context = {
             'course_it': course_it,
             'course_list': course_list,
@@ -23,7 +27,7 @@ def main_page(request):
             'contact': contact,
             'mission': mission,
             'open_door': open_door,
-            'news_list': news_list,
+            'page_obj': page_obj,
         }
         return render(request, template_name='index.html', context=context)
 
@@ -49,7 +53,10 @@ def main_page_courses_details(request, id):
 def news_page_view(request):
     if request.method == 'GET':
         news_list = models.News.objects.all()
-        return render(request, template_name='news.html', context={'news_list': news_list})
+        paginator = Paginator(news_list, 2)
+        page = request.GET.get('page')
+        page_obj = paginator.get_page(page)
+        return render(request, template_name='news.html', context={'page_obj': page_obj})
 
 def news_page_detail_view(request, id):
     if request.method == 'GET':
