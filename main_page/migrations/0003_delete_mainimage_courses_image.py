@@ -6,16 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0002_mainimage'),
+        ("main_page", "0002_mainimage"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='MainImage',
+            name="MainImage",
         ),
         migrations.AddField(
-            model_name='courses',
-            name='image',
-            field=models.ImageField(null=True, upload_to='images/'),
+            model_name="courses",
+            name="image",
+            field=models.ImageField(null=True, upload_to="images/"),
         ),
     ]

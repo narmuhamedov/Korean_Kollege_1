@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккордеон</title>
+    <link rel="stylesheet" href="{% static 'css/abituruents/abit.css' %}">
+
+</head>
+<body>
+    <div class="accordion-container">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <h3>Общие вопросы</h3>
+                <span>▶</span>
+            </div>
+            <div class="accordion-content">
+                <a href="#commission">Приемная комиссия</a>
+                <a href="#rules">Правила приема</a>
+                <a href="#documents">Необходимые документы для поступления</a>
+                <a href="#selection">Положения и порядки отбора и зачисления</a>
+                <a href="#cost">Стоимость обучения</a>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <h3>Дополнительная информация</h3>
+                <span>▶</span>
+            </div>
+            <div class="accordion-content">
+                <a href="#foreign">Иностранному абитуриенту (английский язык обучения)</a>
+                <a href="#recommendations">Список рекомендованных к зачислению (ближнее зарубежье)</a>
+                <a href="#open_day">День открытых дверей 2024</a>
+                <a href="#kgma_info">Информация для поступающих в КГМА</a>
+                <a href="#prep_courses">Приём на подготовительные курсы</a>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="/" class="home-button">На главную</a>
+    </div>
+
+    <div class="faculty_cont">
+    <h1 id="knowledge-title" class="title_t">Специальности</h1>
+    <div class="faculty">
+        {% for i in courses %}
+            <div class="item">
+                <img src="{{ i.image.url }}" alt="Специальность">
+                <div class="item_fon">
+                    <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1 id="knowledge-title" class="title_t">IT Специальности</h1>
+    <div class="faculty">
+        {% for i in itcourses %}
+            <div class="it_item">
+                <img src="{{ i.image.url }}" alt="IT Специальность">
+                <div class="it_fon">
+                    <a class="faculty_href" href="/it_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+    <script src="{% static 'js/abiturients/abit.js' %}"></script>
+    </body>
+</html>

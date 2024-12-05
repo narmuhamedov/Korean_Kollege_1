@@ -6,15 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0005_alter_itcourses_image'),
+        ("main_page", "0005_alter_itcourses_image"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='LogoImage',
+            name="LogoImage",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('logo_image', models.ImageField(upload_to='logo_images')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("logo_image", models.ImageField(upload_to="logo_images")),
             ],
         ),
     ]

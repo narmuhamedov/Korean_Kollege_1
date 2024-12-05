@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0028_news_video_url'),
+        ("main_page", "0028_news_video_url"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='news',
-            name='video_url',
-            field=models.URLField(blank=True, null=True, verbose_name='укажите ссылку с youtube'),
+            model_name="news",
+            name="video_url",
+            field=models.URLField(
+                blank=True, null=True, verbose_name="укажите ссылку с youtube"
+            ),
         ),
     ]

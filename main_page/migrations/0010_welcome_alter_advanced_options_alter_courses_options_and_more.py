@@ -6,35 +6,58 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0009_alter_advanced_image_alter_advanced_text_and_more'),
+        ("main_page", "0009_alter_advanced_image_alter_advanced_text_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Welcome',
+            name="Welcome",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.TextField(verbose_name='дайте описания к ДОБРО ПОЖАЛОВАТЬ')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(verbose_name="дайте описания к ДОБРО ПОЖАЛОВАТЬ"),
+                ),
             ],
             options={
-                'verbose_name': 'добро пожаловать',
-                'verbose_name_plural': 'добро пожаловать',
+                "verbose_name": "добро пожаловать",
+                "verbose_name_plural": "добро пожаловать",
             },
         ),
         migrations.AlterModelOptions(
-            name='advanced',
-            options={'verbose_name': 'продвижение', 'verbose_name_plural': 'продвижения'},
+            name="advanced",
+            options={
+                "verbose_name": "продвижение",
+                "verbose_name_plural": "продвижения",
+            },
         ),
         migrations.AlterModelOptions(
-            name='courses',
-            options={'verbose_name': 'направление', 'verbose_name_plural': 'направления'},
+            name="courses",
+            options={
+                "verbose_name": "направление",
+                "verbose_name_plural": "направления",
+            },
         ),
         migrations.AlterModelOptions(
-            name='itcourses',
-            options={'verbose_name': 'IT направление', 'verbose_name_plural': 'IT направления'},
+            name="itcourses",
+            options={
+                "verbose_name": "IT направление",
+                "verbose_name_plural": "IT направления",
+            },
         ),
         migrations.AlterModelOptions(
-            name='logoimage',
-            options={'verbose_name': 'фото лого', 'verbose_name_plural': 'фото логотипа'},
+            name="logoimage",
+            options={
+                "verbose_name": "фото лого",
+                "verbose_name_plural": "фото логотипа",
+            },
         ),
     ]

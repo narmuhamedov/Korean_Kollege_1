@@ -7,5 +7,3 @@ admin.site.register(models.RegulatoryDocuments)
 admin.site.register(models.DepartmentActivities)
 admin.site.register(models.ShortStoryDepartment)
 admin.site.register(models.Gallery)
-
-

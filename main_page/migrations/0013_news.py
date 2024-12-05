@@ -6,18 +6,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0012_alter_contact_options_courses_description_and_more'),
+        ("main_page", "0012_alter_contact_options_courses_description_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='News',
+            name="News",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to='news/', verbose_name='загрузите фото')),
-                ('title', models.CharField(max_length=100, verbose_name='укажите название новости')),
-                ('description', models.TextField(verbose_name='Укажите написание новости')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(upload_to="news/", verbose_name="загрузите фото"),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        max_length=100, verbose_name="укажите название новости"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(verbose_name="Укажите написание новости"),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

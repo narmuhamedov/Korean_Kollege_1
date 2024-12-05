@@ -3,17 +3,19 @@ from django.contrib import admin
 from . import models
 
 
-
 class LogoImageAdmin(admin.ModelAdmin):
-    list_display = ['logo_image_preview']
+    list_display = ["logo_image_preview"]
 
     def logo_image_preview(self, obj):
         # Проверка, если поле obj.logo_image действительно существует
         if obj.logo_image:
-            return format_html('<img src="{}" style="max-height: 100px;" />', obj.logo_image.url)
+            return format_html(
+                '<img src="{}" style="max-height: 100px;" />', obj.logo_image.url
+            )
         return "Нет изображения"
 
-    logo_image_preview.short_description = 'previews'
+    logo_image_preview.short_description = "previews"
+
 
 # Регистрация моделей
 admin.site.register(models.Courses)

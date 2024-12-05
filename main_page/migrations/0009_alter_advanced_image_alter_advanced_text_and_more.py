@@ -6,38 +6,54 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0008_alter_logoimage_logo_image'),
+        ("main_page", "0008_alter_logoimage_logo_image"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='advanced',
-            name='image',
-            field=models.ImageField(null=True, upload_to='images/', verbose_name='Загрузите значок'),
+            model_name="advanced",
+            name="image",
+            field=models.ImageField(
+                null=True, upload_to="images/", verbose_name="Загрузите значок"
+            ),
         ),
         migrations.AlterField(
-            model_name='advanced',
-            name='text',
-            field=models.TextField(null=True, verbose_name='Укажите почему выбирают вас'),
+            model_name="advanced",
+            name="text",
+            field=models.TextField(
+                null=True, verbose_name="Укажите почему выбирают вас"
+            ),
         ),
         migrations.AlterField(
-            model_name='courses',
-            name='course_name',
-            field=models.CharField(max_length=100, null=True, verbose_name='Укажите название курса'),
+            model_name="courses",
+            name="course_name",
+            field=models.CharField(
+                max_length=100, null=True, verbose_name="Укажите название курса"
+            ),
         ),
         migrations.AlterField(
-            model_name='courses',
-            name='image',
-            field=models.ImageField(null=True, upload_to='images/', verbose_name='Загрузите фото направления'),
+            model_name="courses",
+            name="image",
+            field=models.ImageField(
+                null=True,
+                upload_to="images/",
+                verbose_name="Загрузите фото направления",
+            ),
         ),
         migrations.AlterField(
-            model_name='itcourses',
-            name='course_name',
-            field=models.CharField(max_length=100, null=True, verbose_name='Укажите название курса'),
+            model_name="itcourses",
+            name="course_name",
+            field=models.CharField(
+                max_length=100, null=True, verbose_name="Укажите название курса"
+            ),
         ),
         migrations.AlterField(
-            model_name='itcourses',
-            name='image',
-            field=models.ImageField(null=True, upload_to='images/', verbose_name='Загрузите фото IT специальности'),
+            model_name="itcourses",
+            name="image",
+            field=models.ImageField(
+                null=True,
+                upload_to="images/",
+                verbose_name="Загрузите фото IT специальности",
+            ),
         ),
     ]

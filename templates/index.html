@@ -67,7 +67,7 @@
 
                 {% for i in course_list %}
                     <div class="item">
-                        <img src="{{ i.image }}" alt="">
+                        <img src="{{ i.image.url }}" alt="">
                         <div class="item_fon"></div>
                         <span class="direct">
                   <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>

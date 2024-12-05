@@ -6,20 +6,67 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0010_welcome_alter_advanced_options_alter_courses_options_and_more'),
+        (
+            "main_page",
+            "0010_welcome_alter_advanced_options_alter_courses_options_and_more",
+        ),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name="Contact",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('street', models.CharField(max_length=100, verbose_name='Укажите улицу')),
-                ('number_1', models.CharField(max_length=100, verbose_name='Укажите номер телефона 1')),
-                ('number_2', models.CharField(blank=True, max_length=100, verbose_name='Укажите номер телефона 2')),
-                ('number_3', models.CharField(blank=True, max_length=100, verbose_name='Укажите номер телефона 3')),
-                ('number_4', models.CharField(blank=True, max_length=100, verbose_name='Укажите номер телефона 4')),
-                ('email', models.EmailField(default='@gmail.com', max_length=254, verbose_name='Укажите EMAIL')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "street",
+                    models.CharField(max_length=100, verbose_name="Укажите улицу"),
+                ),
+                (
+                    "number_1",
+                    models.CharField(
+                        max_length=100, verbose_name="Укажите номер телефона 1"
+                    ),
+                ),
+                (
+                    "number_2",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        verbose_name="Укажите номер телефона 2",
+                    ),
+                ),
+                (
+                    "number_3",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        verbose_name="Укажите номер телефона 3",
+                    ),
+                ),
+                (
+                    "number_4",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        verbose_name="Укажите номер телефона 4",
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        default="@gmail.com",
+                        max_length=254,
+                        verbose_name="Укажите EMAIL",
+                    ),
+                ),
             ],
         ),
     ]

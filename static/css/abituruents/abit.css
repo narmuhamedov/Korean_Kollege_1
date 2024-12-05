@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    margin: 0;
+}
+
+h1.title_t {
+    text-align: center;
+}
+
+.accordion-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+    background: #f1f1f1;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background: #e0e0e0;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.accordion-header span {
+    font-size: 16px;
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active span {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: #fff;
+}
+
+.accordion-content a {
+    color: #0078d7;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-button {
+    background: #0078d7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.home-button:hover {
+    background: #005bb5;
+}
+
+.faculty {
+    display: flex;
+    flex-wrap: nowrap; /* Запрет переноса строк */
+    justify-content: center; /* Центрирование элементов */
+    gap: 20px; /* Расстояние между элементами */
+    margin-top: 30px;
+    overflow-x: auto; /* Горизонтальная прокрутка, если элементов много */
+}
+
+.item, .it_item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.item img, .it_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item_fon, .it_fon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.faculty_href {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}

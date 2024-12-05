@@ -6,42 +6,56 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_page', '0011_contact'),
+        ("main_page", "0011_contact"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='contact',
-            options={'verbose_name': 'контакт', 'verbose_name_plural': 'контакты'},
+            name="contact",
+            options={"verbose_name": "контакт", "verbose_name_plural": "контакты"},
         ),
         migrations.AddField(
-            model_name='courses',
-            name='description',
-            field=models.TextField(null=True, verbose_name='укажите описания к курсу'),
+            model_name="courses",
+            name="description",
+            field=models.TextField(null=True, verbose_name="укажите описания к курсу"),
         ),
         migrations.AddField(
-            model_name='courses',
-            name='exam',
-            field=models.CharField(choices=[('Да', 'Да'), ('Нет', 'Нет')], max_length=100, null=True, verbose_name='есть ли вступительные экзамены'),
+            model_name="courses",
+            name="exam",
+            field=models.CharField(
+                choices=[("Да", "Да"), ("Нет", "Нет")],
+                max_length=100,
+                null=True,
+                verbose_name="есть ли вступительные экзамены",
+            ),
         ),
         migrations.AddField(
-            model_name='courses',
-            name='some_information',
-            field=models.TextField(null=True, verbose_name='укажите информацию о скидках'),
+            model_name="courses",
+            name="some_information",
+            field=models.TextField(
+                null=True, verbose_name="укажите информацию о скидках"
+            ),
         ),
         migrations.AddField(
-            model_name='itcourses',
-            name='description',
-            field=models.TextField(null=True, verbose_name='укажите описания к курсу'),
+            model_name="itcourses",
+            name="description",
+            field=models.TextField(null=True, verbose_name="укажите описания к курсу"),
         ),
         migrations.AddField(
-            model_name='itcourses',
-            name='exam',
-            field=models.CharField(choices=[('Да', 'Да'), ('Нет', 'Нет')], max_length=100, null=True, verbose_name='есть ли вступительные экзамены'),
+            model_name="itcourses",
+            name="exam",
+            field=models.CharField(
+                choices=[("Да", "Да"), ("Нет", "Нет")],
+                max_length=100,
+                null=True,
+                verbose_name="есть ли вступительные экзамены",
+            ),
         ),
         migrations.AddField(
-            model_name='itcourses',
-            name='some_information',
-            field=models.TextField(null=True, verbose_name='укажите информацию о скидках'),
+            model_name="itcourses",
+            name="some_information",
+            field=models.TextField(
+                null=True, verbose_name="укажите информацию о скидках"
+            ),
         ),
     ]
