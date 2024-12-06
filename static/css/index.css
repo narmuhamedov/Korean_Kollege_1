@@ -52,6 +52,10 @@ body {
     position: absolute;
     top: -100px;
     right: 0;
+
+
+    height: 100vh; /* Заполняет высоту экрана */
+    object-fit: cover; /* Масштабирование без искажения */
 }
 
 .bcg {
@@ -63,13 +67,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .bcg_black {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 88vh;
     /* z-index: 1; */
     background-color: rgba(0, 0, 0, 20%);
 }
