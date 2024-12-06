@@ -1,14 +1,17 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аккордеон</title>
     <link rel="stylesheet" href="{% static 'css/abituruents/abit.css' %}">
 
-</head>
-<body>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'ru',
+            includedLanguages: 'en,ru,ky,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <div class="accordion-container">
         <div class="accordion-item">
             <div class="accordion-header">
@@ -31,7 +34,6 @@
             <div class="accordion-content">
                 <a href="#foreign">Иностранному абитуриенту (английский язык обучения)</a>
                 <a href="#recommendations">Список рекомендованных к зачислению (ближнее зарубежье)</a>
-                <a href="#open_day">День открытых дверей 2024</a>
                 <a href="#kgma_info">Информация для поступающих в КГМА</a>
                 <a href="#prep_courses">Приём на подготовительные курсы</a>
             </div>
@@ -40,7 +42,7 @@
     <div class="button-container">
         <a href="/" class="home-button">На главную</a>
     </div>
-
+<a id="google_translate_element"></a>
     <div class="faculty_cont">
     <h1 id="knowledge-title" class="title_t">Специальности</h1>
     <div class="faculty">
@@ -68,5 +70,3 @@
 </div>
 
     <script src="{% static 'js/abiturients/abit.js' %}"></script>
-    </body>
-</html>
