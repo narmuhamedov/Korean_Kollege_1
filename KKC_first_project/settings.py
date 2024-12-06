@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "about_us",
     "international_department",
     'abiturients',
+    'stud_live',
 ]
 
 MIDDLEWARE = [
