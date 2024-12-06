@@ -15,7 +15,7 @@ def main_page(request):
         mission = models.Mission.objects.all()
         open_door = models.OpenDoor.objects.all()
         news_list = models.News.objects.all().order_by("-id")
-        paginator = Paginator(news_list, 2)
+        paginator = Paginator(news_list, 6)
         page = request.GET.get("page")
         page_obj = paginator.get_page(page)
         context = {
