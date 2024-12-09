@@ -40,32 +40,34 @@
 
 
         </div>
-        <div id="menu" class="burger d-none">
+        <div id="menu" class="burger">
             <div class="nav_footer burger_nav">
-                <h6><a href="#" class="link_nav">Главная</a></h6>
-                <h6><a href="#" class="link_nav">Абитуриентам</a></h6>
-                <h6><a href="#" class="link_nav">Новости и события</a></h6>
-                <h6><a href="#" class="link_nav">Студенческая жизнь</a></h6>
-                <h6><a href="/documents/" class="link_nav">Документы</a></h6>
+                 <a href="/" class="list_href">Главная</a>
+                <a href="{% url 'about_us' %}" class="list_href">О нас</a>
+                <a href="{% url 'documents' %}" class="list_href">Документы</a>
+                <a href="{% url 'international_department' %}" class="list_href">Международный отдел</a>
+                <a href="#" class="list_href">Студенческая жизнь</a>
+                <a href="{% url 'abituents_list' %}" class="list_href">Абитуриентам</a>
             </div>
             <div class="stud_tools burger_tools">
                 <div class="tool_1">
-                    <img src="./image/icon/kicalib.png" alt="">
+                    <img src="{% static 'image_kkc/icon/kicalib.png' %}" alt="">
                     <h6 class="footer_tool"><a class="tool_item" href="#">Kicalib</a></h6>
                 </div>
                 <div class="tool_1">
-                    <img src="./image/icon/avn.png" alt="">
+                    <img src="{% static 'image_kkc/icon/avn.png' %}" alt="">
                     <h6 class="footer_tool"><a class="tool_item" href="#">AVN</a></h6>
                 </div>
             </div>
         </div>
         <div class="btn">
             <button id="burger" class="burger_icon">
-                <img src="./image/icon/hamburger-button.png" alt="">
+                <img src="{% static 'image_kkc/burger.png' %}" alt="">
             </button>
             <button id="cross" class="cross">
-                <img src="./image/icon/cross.png" alt="">
+                <img src="{% static 'image_kkc/cross.png' %}" alt="">
             </button>
         </div>
     </nav>
 </header>
+<script src="{% static 'js/index.js' %}"></script>
