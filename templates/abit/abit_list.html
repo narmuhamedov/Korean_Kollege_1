@@ -1,7 +1,9 @@
 {% load static %}
 {% include '../header.html' %}
     <link rel="stylesheet" href="{% static 'css/abituruents/abit.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+<link rel="stylesheet" href="{% static 'css/component.css' %}">
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -13,7 +15,46 @@
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <div class="accordion-container">
+<a id="google_translate_element"></a>
+
+<main class="main_2">
+    <div class="conteiner">
+
+        <div class="faculty_cont">
+            <h1 id="knowledge-title" class="title_t" >Специальности</h1>
+            <div class="line_2 line"></div>
+            <div class="faculty">
+
+                {% for i in courses %}
+                    <div class="item">
+                        <img src="{{ i.image.url }}" alt="">
+                        <div class="item_fon"></div>
+                        <span class="direct">
+                          <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                        </span>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+
+            <h1 id="knowledge-title" class="title_t" >IT специальности</h1>
+            <div class="line_2 line"></div>
+            <div class="faculty it_faculty">
+
+                {% for i in itcourses %}
+                    <div class="it_item item">
+                        <img src="{{ i.image.url }}" alt="">
+                        <div class="item_fon it_fon"></div>
+                        <span class="direct">
+                        <a class="faculty_href" href="/it_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                    </span>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+     <div class="accordion-container">
         <div class="accordion-item">
             <div class="accordion-header">
                 <h3>Общие вопросы</h3>
@@ -38,34 +79,10 @@
         </div>
     </div>
     <div class="button-container">
-        <a href="/" class="home-button">На главную</a>
+        <a target="_blank" href="https://2020.edu.gov.kg/spuz/" class="home-button">Edu-Gov</a>
     </div>
-<a id="google_translate_element"></a>
-    <div class="faculty_cont">
-    <h1 id="knowledge-title" class="title_t">Специальности</h1>
-    <div class="faculty">
-        {% for i in courses %}
-            <div class="item">
-                <img src="{{ i.image.url }}" alt="Специальность">
-                <div class="item_fon">
-                    <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>
-                </div>
-            </div>
-        {% endfor %}
     </div>
+</main>
 
-    <h1 id="knowledge-title" class="title_t">IT Специальности</h1>
-    <div class="faculty">
-        {% for i in itcourses %}
-            <div class="it_item">
-                <img src="{{ i.image.url }}" alt="IT Специальность">
-                <div class="it_fon">
-                    <a class="faculty_href" href="/it_detail/{{ i.id }}/">{{ i.course_name }}</a>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</div>
-
-    <script src="{% static 'js/abiturients/abit.js' %}"></script>
+<script src="{% static 'js/abiturients/abit.js' %}"></script>
 {% include '../footer.html' %}

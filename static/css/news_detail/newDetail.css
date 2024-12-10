@@ -4,20 +4,25 @@ h1{
   margin-bottom: 30px;
   color: #01609A;
 }
+.dateil_title{
+    text-align: center;
+}
 .cont_news {
   width: 80%;
   margin: auto;
-  display: flex; /* Включаем Flexbox */
-  justify-content: center; /* Выравнивание по горизонтали */
-  align-items: center; /* Выравнивание по вертикали */
-  gap: 20px; /* Расстояние между элементами */
-  flex-wrap: wrap; /* Перенос строк для маленьких экранов */
+/*  display: flex; *//* Включаем Flexbox */
+/*  justify-content: center; *//* Выравнивание по горизонтали */
+/*  align-items: center; *//* Выравнивание по вертикали */
+/*  gap: 20px; *//* Расстояние между элементами */
+/*  flex-wrap: wrap; *//* Перенос строк для маленьких экранов */
 }
 .image_news {
   flex: 1 1 calc(50% - 20px); /* Устанавливаем ширину каждого изображения в 50% */
   max-width: 50%; /* Максимальная ширина 50% контейнера */
   display: flex;
   justify-content: center;
+  margin: auto;
+  margin-top:20px ;
 }
 .image_news img {
   width: 100%; /* Изображение растягивается на всю ширину контейнера */
@@ -25,6 +30,10 @@ h1{
   object-fit: cover; /* Центрирует изображение и обрезает лишнее */
   max-height: 300px; /* Устанавливаем одинаковую высоту для всех изображений */
   border-radius: 10px; /* Для округленных углов, если нужно */
+}
+.text_news{
+  margin: auto;
+  text-align: center;
 }
 h2{
   color: #01609A;
