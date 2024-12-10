@@ -66,3 +66,8 @@ h1{
   background-color: white;
   color: #01609A;
 }
+@media screen and (max-width: 850px){
+  h1{
+    left: 20px;
+  }
+}
