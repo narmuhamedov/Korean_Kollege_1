@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def stud_live_list(request):
+    if request.method == "GET":
+        return render(request, template_name='stud_live.html')

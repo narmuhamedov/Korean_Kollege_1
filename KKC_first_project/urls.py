@@ -10,6 +10,7 @@ urlpatterns = [
     path("", include("about_us.urls")),
     path("", include("international_department.urls")),
     path("", include('abiturients.urls')),
+    path("", include('stud_live.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
