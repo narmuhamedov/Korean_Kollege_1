@@ -1,0 +1,47 @@
+{% load static %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+<link rel="stylesheet" href="{% static 'css/component.css' %}">
+<body>
+<main class="bcg_main">
+    <img class="img_bcg" src="{% static 'image_kkc/news.png' %}" alt="Новостное изображение">
+    <div class="text-content text-content2">
+        <h1>Студенческая жизнь</h1>
+    </div>
+</main>
+
+<div class="news">
+    {% for i in stud_live_list %}
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ i.image.url }}" alt="">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ i.title }}</h5>
+            <p class="card-text">{{ i.description }}</p>
+            <p class="date-news">{{ i.created_at }}</p>
+            <a href="/stud_live/{{ i.id }}/" class="card-button">Подробнее</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Блок пагинации -->
+<div class="pagination">
+    <div class="pagination-links">
+        {% if stud_live_list.has_previous %}
+            <a href="?page=1" class="pagination-btn first-page">Первая</a>
+            <a href="?page={{ stud_live_list.previous_page_number }}" class="pagination-btn prev-page">Назад</a>
+        {% endif %}
+
+        <span class="current-page">Страница {{ stud_live_list.number }} из {{ stud_live_list.paginator.num_pages }}</span>
+
+        {% if stud_live_list.has_next %}
+            <a href="?page={{ stud_live_list.next_page_number }}" class="pagination-btn next-page">Вперед</a>
+            <a href="?page={{ stud_live_list.paginator.num_pages }}" class="pagination-btn last-page">Последняя</a>
+        {% endif %}
+    </div>
+</div>
+
+
+{% include 'footer.html' %}

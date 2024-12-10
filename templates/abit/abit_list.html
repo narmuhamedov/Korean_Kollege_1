@@ -20,11 +20,9 @@
                 <span>▶</span>
             </div>
             <div class="accordion-content">
-                <a href="#commission">Приемная комиссия</a>
-                <a href="#rules">Правила приема</a>
-                <a href="#documents">Необходимые документы для поступления</a>
-                <a href="#selection">Положения и порядки отбора и зачисления</a>
-                <a href="#cost">Стоимость обучения</a>
+                {% for i in all_questions %}
+                <a target="_blank" href="{{ i.answer_text }}">{{ i.question_text }}</a>
+                {% endfor %}
             </div>
         </div>
         <div class="accordion-item">
@@ -33,10 +31,9 @@
                 <span>▶</span>
             </div>
             <div class="accordion-content">
-                <a href="#foreign">Иностранному абитуриенту (английский язык обучения)</a>
-                <a href="#recommendations">Список рекомендованных к зачислению (ближнее зарубежье)</a>
-                <a href="#kgma_info">Информация для поступающих в КГМА</a>
-                <a href="#prep_courses">Приём на подготовительные курсы</a>
+                {% for i in edition_questions %}
+                <a target="_blank" href="{{ i.answer_text }}">{{ i.question_text }}</a>
+                {% endfor %}
             </div>
         </div>
     </div>
