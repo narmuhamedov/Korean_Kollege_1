@@ -76,7 +76,6 @@ class Welcome(models.Model):
 
 # Таблица для обычных направлений
 class Courses(models.Model):
-    EXAM = (("Да", "Да"), ("Нет", "Нет"))
     image = models.ImageField(
         upload_to="images/", null=True, verbose_name="Загрузите фото направления"
     )
@@ -93,7 +92,7 @@ class Courses(models.Model):
     exam = models.CharField(
         max_length=100,
         verbose_name="есть ли вступительные экзамены",
-        choices=EXAM,
+        default='teasdasdasdxt',
         null=True,
     )
     lupic_ic = models.TextField(verbose_name='Укажите Lupic', null=True, blank=True)
@@ -131,7 +130,6 @@ class OpenDoor(models.Model):
 
 # Таблица для IT направлений
 class ITCourses(models.Model):
-    EXAM = (("Да", "Да"), ("Нет", "Нет"))
     image = models.ImageField(
         upload_to="images/", null=True, verbose_name="Загрузите фото IT специальности"
     )
@@ -148,7 +146,7 @@ class ITCourses(models.Model):
     exam = models.CharField(
         max_length=100,
         verbose_name="есть ли вступительные экзамены",
-        choices=EXAM,
+        default='texfsdfsdfsdft',
         null=True,
     )
 
