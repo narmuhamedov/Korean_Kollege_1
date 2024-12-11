@@ -11,3 +11,7 @@
 .d-flex{
     display: flex !important;
 }
+
+.contact_item a h3{
+    font-size: 18px;
+}
