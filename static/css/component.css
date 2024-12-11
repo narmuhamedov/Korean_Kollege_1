@@ -22,8 +22,11 @@ button{
 body{
   font-size: 22px;
 }
+
 .bcg_main img{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
   filter: brightness(70%)
 }
@@ -111,5 +114,19 @@ body{
   .bcg_main h1{
     top: 150px;
     left: 60px;
+  }
+}@media screen and (max-width: 600px){
+  .bcg_main{
+  height:300px;
+}
+  .bcg_main h1{
+  text-align: center;
+    top:200px !important;
+}
+}
+@media screen and (max-width: 400px){
+  .bcg_main h1{
+
+    left: 15px;
   }
 }
