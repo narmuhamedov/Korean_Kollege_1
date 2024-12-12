@@ -98,6 +98,10 @@ body{
   font-size: 22px;
   font-weight: 600;
   margin-top: 60px;
+  color: white;
+}
+.advan_p{
+  color: white;
 }
 
 @media screen and (max-width: 1300px){
@@ -126,7 +130,6 @@ body{
 }
 @media screen and (max-width: 400px){
   .bcg_main h1{
-
     left: 15px;
   }
 }

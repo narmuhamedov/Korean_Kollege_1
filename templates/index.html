@@ -67,11 +67,13 @@
 
                 {% for i in course_list %}
                     <div class="item">
+                        <a class="faculty_href" href="/course_detail/{{ i.id }}/">
                         <img src="{{ i.image.url }}" alt="">
                         <div class="item_fon"></div>
                         <span class="direct">
-                          <a class="faculty_href" href="/course_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                          {{ i.course_name }}
                         </span>
+                            </a>
                     </div>
                 {% endfor %}
 
@@ -84,11 +86,13 @@
 
                 {% for i in course_it %}
                     <div class="it_item item">
+                        <a class="faculty_href" href="/it_detail/{{ i.id }}/">
                         <img src="{{ i.image.url }}" alt="">
                         <div class="item_fon it_fon"></div>
                         <span class="direct">
-                        <a class="faculty_href" href="/it_detail/{{ i.id }}/">{{ i.course_name }}</a>
+                        {{ i.course_name }}
                     </span>
+                            </a>
                     </div>
                 {% endfor %}
 
