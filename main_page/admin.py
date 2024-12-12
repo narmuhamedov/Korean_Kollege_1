@@ -1,10 +1,35 @@
 from django.utils.html import format_html
 from django.contrib import admin
 from . import models
+from django.forms import ModelForm
+from django.core.exceptions import ValidationError
+from PIL import Image
+
+class ImageForm(ModelForm):
+    class Meta:
+        model = models.LogoImage
+        fields = ("logo_image",)
+
+    def clean(self):
+        super().clean()
+        if self.cleaned_data.get("logo_image"):
+            try:
+                img = Image.open(self.cleaned_data.get("logo_image"))
+                width, height = img.size
+                print('ololoolol', width, height)
+                # Проверяем размер изображения в пикселях
+                if width >= 1500 or height >= 900:
+                    raise ValidationError(
+                        f"Размер изображения слишком большой! Максимальный размер: 1500x900 пикселей. "
+                        f"Загруженное изображение имеет размер: {width}x{height} пикселей."
+                    )
+            except Exception as e:
+                raise ValidationError(f"Ошибка обработки изображения: {e}")
 
 
 class LogoImageAdmin(admin.ModelAdmin):
     list_display = ["logo_image_preview"]
+    form = ImageForm
 
     def logo_image_preview(self, obj):
         # Проверка, если поле obj.logo_image действительно существует

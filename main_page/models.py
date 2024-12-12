@@ -42,6 +42,8 @@ class LogoImage(models.Model):
         verbose_name = "фото лого"
         verbose_name_plural = "фото логотипа"
 
+    
+
 
 # Таблица Почему выбирают нас
 
