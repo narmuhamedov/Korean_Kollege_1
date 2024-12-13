@@ -1,164 +1,170 @@
-{% include 'header.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/news.css' %}">
-<link rel="stylesheet" href="{% static 'css/component.css' %}">
-<link rel="stylesheet" href="{% static 'css/news.css' %}">
+<link rel="stylesheet" href="{% static 'css/news.css' %}" />
+<link rel="stylesheet" href="{% static 'css/component.css' %}" />
+<link rel="stylesheet" href="{% static 'css/news.css' %}" />
+{% include 'header.html' %}
 <main>
-    <div class="bcg slider">
-        {% for i in logo_image %}
-            <img class="background_photo" src="{{ i.logo_image }}" alt="">
-        {% endfor %}
-        <div class="bcg_black"></div>
-        <h1 class="title">Learn. Grow. Achieve!</h1>
-    </div>
-
-
+  <div class="bcg slider">
+    {% for i in logo_image %}
+    <img class="background_photo" src="{{ i.logo_image }}" alt="" />
+    {% endfor %}
+    <div class="bcg_black"></div>
+    <h1 class="title">Learn. Grow. Achieve!</h1>
+  </div>
 </main>
-
 
 <main class="main_2">
-    <div class="conteiner">
-
-        <div class="greetings">
-            <h1 id="knowledge-title" class="title_t" >Наша миссия</h1>
-            <div class="line"></div>
-            {% for i in mission %}
-                <p>{{ i.mission }}</p>
-            {% endfor %}
-        </div>
-
-
-        <div class="greetings">
-            <h1 id="knowledge-title" class="title_t" >Откройте мир знаний вместе с нами!</h1>
-            <div class="line"></div>
-            {% for i in welcome %}
-                <p>{{ i.description }}</p>
-            {% endfor %}
-        </div>
-
-        <div class="advantages">
-            <h1 id="knowledge-title" class="title_t" >Почему выбирают нас?</h1>
-
-            {% for i in advanced %}
-                <div class="advan_1">
-                    <div class="adv_icon">
-                        <img src="{{ i.image.url }}" alt="">
-                    </div>
-                    <p class="advan_p">{{ i.text }}</p>
-                </div>
-            {% endfor %}
-
-
-        </div>
-
-
-        <div class="greetings">
-            <h1 id="knowledge-title" class="title_t" >Откройте двери к образованию в Корее!</h1>
-            <div class="line"></div>
-            {% for i in open_door %}
-            <p>{{ i.open_door }}</p>
-        {% endfor %}
-        </div>
-
-        <div class="faculty_cont">
-            <h1 id="knowledge-title" class="title_t" >Специальности</h1>
-            <div class="line_2 line"></div>
-            <div class="faculty">
-
-                {% for i in course_list %}
-                    <div class="item">
-                        <a class="faculty_href" href="/course_detail/{{ i.id }}/">
-                        <img src="{{ i.image.url }}" alt="">
-                        <div class="item_fon"></div>
-                        <span class="direct">
-                          {{ i.course_name }}
-                        </span>
-                            </a>
-                    </div>
-                {% endfor %}
-
-            </div>
-
-
-            <h1 id="knowledge-title" class="title_t" >IT специальности</h1>
-            <div class="line_2 line"></div>
-            <div class="faculty it_faculty">
-
-                {% for i in course_it %}
-                    <div class="it_item item">
-                        <a class="faculty_href" href="/it_detail/{{ i.id }}/">
-                        <img src="{{ i.image.url }}" alt="">
-                        <div class="item_fon it_fon"></div>
-                        <span class="direct">
-                        {{ i.course_name }}
-                    </span>
-                            </a>
-                    </div>
-                {% endfor %}
-
-            </div>
-        </div>
+  <div class="conteiner">
+    <div class="greetings">
+      <h1 id="knowledge-title" class="title_t">Наша миссия</h1>
+      <div class="line"></div>
+      {% for i in mission %}
+      <p>{{ i.mission }}</p>
+      {% endfor %}
     </div>
+
+    <div class="greetings">
+      <h1 id="knowledge-title" class="title_t">
+        Откройте мир знаний вместе с нами!
+      </h1>
+      <div class="line"></div>
+      {% for i in welcome %}
+      <p>{{ i.description }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="advantages">
+      <h1 id="knowledge-title" class="title_t">Почему выбирают нас?</h1>
+
+      {% for i in advanced %}
+      <div class="advan_1">
+        <div class="adv_icon">
+          <img src="{{ i.image.url }}" alt="" />
+        </div>
+        <p class="advan_p">{{ i.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="greetings">
+      <h1 id="knowledge-title" class="title_t">
+        Откройте двери к образованию в Корее!
+      </h1>
+      <div class="line"></div>
+      {% for i in open_door %}
+      <p>{{ i.open_door }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="faculty_cont">
+      <h1 id="knowledge-title" class="title_t">Специальности</h1>
+      <div class="line_2 line"></div>
+      <div class="faculty">
+        {% for i in course_list %}
+        <div class="item">
+          <a class="faculty_href" href="/course_detail/{{ i.id }}/">
+            <img src="{{ i.image.url }}" alt="" />
+            <div class="item_fon"></div>
+            <span class="direct"> {{ i.course_name }} </span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <h1 id="knowledge-title" class="title_t">IT специальности</h1>
+      <div class="line_2 line"></div>
+      <div class="faculty it_faculty">
+        {% for i in course_it %}
+        <div class="it_item item">
+          <a class="faculty_href" href="/it_detail/{{ i.id }}/">
+            <img src="{{ i.image.url }}" alt="" />
+            <div class="item_fon it_fon"></div>
+            <span class="direct"> {{ i.course_name }} </span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </main>
 <main class="bcg_main">
-    <br><br><br><br><br><br><br><br>
-    <img class="img_bcg" src="{% static 'image_kkc/news.png' %}" alt="Новостное изображение">
-    <div class="text-content text-content2">
-        <h1>Новости и события колледжа</h1>
-    </div>
+  <br /><br /><br /><br /><br /><br /><br /><br />
+  <img
+    class="img_bcg"
+    src="{% static 'image_kkc/news.png' %}"
+    alt="Новостное изображение"
+  />
+  <div class="text-content text-content2">
+    <h1>Новости и события колледжа</h1>
+  </div>
 </main>
 
 <div id="news" class="news">
-    {% for i in page_obj %}
-    <div class="card">
-        <div class="card-image">
-            <img src="{{ i.image.url }}" alt="">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">{{ i.title }}</h5>
-            <p class="card-text">{{ i.description }}</p>
-            <p class="date-news">{{ i.created_at }}</p>
-           <a href="/news_list/{{ i.id }}/" class="card-button">Подробнее</a>
-        </div>
+  {% for i in page_obj %}
+  <div class="card">
+    <div class="card-image">
+      <img src="{{ i.image.url }}" alt="" />
     </div>
-    {% endfor %}
+    <div class="card-body">
+      <h5 class="card-title">{{ i.title }}</h5>
+      <p class="card-text">{{ i.description }}</p>
+      <p class="date-news">{{ i.created_at }}</p>
+      <a href="/news_list/{{ i.id }}/" class="card-button">Подробнее</a>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-   <!-- Блок пагинации -->
+<!-- Блок пагинации -->
 <div class="pagination">
-    <div class="pagination-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1" class="pagination-btn first-page">Первая</a>
-            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-btn prev-page">Предыдущая</a>
-        {% endif %}
+  <div class="pagination-links">
+    {% if page_obj.has_previous %}
+    <a href="?page=1" class="pagination-btn first-page">Первая</a>
+    <a
+      href="?page={{ page_obj.previous_page_number }}"
+      class="pagination-btn prev-page"
+      >Предыдущая</a
+    >
+    {% endif %}
 
-        <span class="current-page">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+    <span class="current-page"
+      >Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages
+      }}</span
+    >
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}" class="pagination-btn next-page">Следующая</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-btn last-page">Последняя</a>
-        {% endif %}
-    </div>
+    {% if page_obj.has_next %}
+    <a
+      href="?page={{ page_obj.next_page_number }}"
+      class="pagination-btn next-page"
+      >Следующая</a
+    >
+    <a
+      href="?page={{ page_obj.paginator.num_pages }}"
+      class="pagination-btn last-page"
+      >Последняя</a
+    >
+    {% endif %}
+  </div>
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".slider .background_photo");
-        let currentIndex = 0;
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".slider .background_photo");
+    let currentIndex = 0;
 
-        function showNextImage() {
-            images[currentIndex].style.opacity = 0;
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.opacity = 1;
-        }
+    function showNextImage() {
+      images[currentIndex].style.opacity = 0;
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.opacity = 1;
+    }
 
-        images.forEach((img, index) => {
-            img.style.position = "absolute";
-            img.style.transition = "opacity 1s";
-            img.style.opacity = index === 0 ? 1 : 0;
-        });
-
-        setInterval(showNextImage, 3000);
+    images.forEach((img, index) => {
+      img.style.position = "absolute";
+      img.style.transition = "opacity 1s";
+      img.style.opacity = index === 0 ? 1 : 0;
     });
+
+    setInterval(showNextImage, 3000);
+  });
 </script>
 <script src="{% static 'js/no_scrole.js' %}"></script>
 {% include 'footer.html' %}
