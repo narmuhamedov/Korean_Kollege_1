@@ -42,8 +42,6 @@ class LogoImage(models.Model):
         verbose_name = "фото лого"
         verbose_name_plural = "фото логотипа"
 
-    
-
 
 # Таблица Почему выбирают нас
 
@@ -94,11 +92,10 @@ class Courses(models.Model):
     exam = models.CharField(
         max_length=100,
         verbose_name="есть ли вступительные экзамены",
-        default='teasdasdasdxt',
+        default="teasdasdasdxt",
         null=True,
     )
-    lupic_ic = models.TextField(verbose_name='Укажите Lupic', null=True, blank=True)
-
+    lupic_ic = models.TextField(verbose_name="Укажите Lupic", null=True, blank=True)
 
     def __str__(self):
         return self.course_name
@@ -148,11 +145,11 @@ class ITCourses(models.Model):
     exam = models.CharField(
         max_length=100,
         verbose_name="есть ли вступительные экзамены",
-        default='texfsdfsdfsdft',
+        default="texfsdfsdfsdft",
         null=True,
     )
 
-    lupic_ic = models.TextField(verbose_name='Укажите Lupic', null=True, blank=True)
+    lupic_ic = models.TextField(verbose_name="Укажите Lupic", null=True, blank=True)
 
     def __str__(self):
         return self.course_name

@@ -1,0 +1,40 @@
+services:
+  postgresql:
+    image: postgres:16-alpine
+    container_name: kkc_db
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    # environment:
+    #   - SQL_USER=ig
+    #   - SQL_PASSWORD=ig1234ig
+    #   - SQL_DB=medical_data
+    #   - SQL_HOST=postgresql
+
+  web:
+    container_name: kkc_web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn KKC_first_project.wsgi:application --bind 0.0.0.0:8000 --access-logfile - --error-logfile -
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    restart: always
+    # env_file:
+    #   - ./.env.prod
+    depends_on:
+      - postgresql
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
