@@ -1,7 +1,10 @@
 from .base import *
+from dotenv import load_dotenv
 import os
 
-DEBUG = True
+load_dotenv()
+
+DEBUG = os.getenv("DEBUG") == "True"
 
 ALLOWED_HOSTS = [
     "kkc.kg",
