@@ -1,6 +1,6 @@
 services:
   postgresql:
-    image: postgres:16-alpine
+    image: postgres:17-alpine
     container_name: kkc_db
     restart: always
     volumes:
@@ -9,11 +9,21 @@ services:
       - 5432:5432
     env_file:
       - .env
-    # environment:
-    #   - SQL_USER=ig
-    #   - SQL_PASSWORD=ig1234ig
-    #   - SQL_DB=medical_data
-    #   - SQL_HOST=postgresql
+    environment:
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+      - POSTGRES_DB=${SQL_DB}
+
+  migrate:
+    container_name: kkc_migrate
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py migrate
+    env_file:
+      - .env
+    depends_on:
+      - postgresql
 
   web:
     container_name: kkc_web
@@ -22,19 +32,20 @@ services:
       dockerfile: Dockerfile
     command: gunicorn KKC_first_project.wsgi:application --bind 0.0.0.0:8000 --workers 5 --access-logfile - --error-logfile -
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - ./staticfiles:/app/staticfiles
+      - ./media:/app/media
     expose:
       - 8000
     ports:
-      - 8000:8000
+      - 127.0.0.1:8000:8000
     restart: always
     # env_file:
     #   - ./.env.prod
     depends_on:
-      - postgresql
+      migrate:
+        condition: service_completed_successfully
+      postgresql:
+        condition: service_started
 
 volumes:
   postgres_data:
-  static_volume:
-  media_volume:
