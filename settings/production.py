@@ -15,6 +15,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://kkc.kg",
+    "https://www.kkc.kg",
     "https://saving-randomly-malamute.ngrok-free.app",
     "https://translate.googleapis.com",
     "https://127.0.0.1",
